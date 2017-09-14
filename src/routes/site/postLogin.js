@@ -1,4 +1,4 @@
-const client = require('./../../models/client');
+const client = require('./../../db/client');
 
 module.exports = async (ctx) => {
   const resualt = {

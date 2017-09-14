@@ -9,8 +9,8 @@ const client = require('knex')({
   debug: isDev,
   connection: {
     host: mysqlConfig.host,
-    user: mysqlConfig.user,
-    password: mysqlConfig.password,
+    user: process.env.DB_USER || mysqlConfig.user,
+    password: process.env.DB_PWD || mysqlConfig.password,
     database: mysqlConfig.database,
     supportBigNumbers: true,
     bigNumberStrings: true,

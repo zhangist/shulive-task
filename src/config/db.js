@@ -3,16 +3,16 @@ module.exports = {
     dev: {
       host: 'localhost',
       port: '3306',
-      user: '<user>',
-      password: '<password>',
-      database: '<database>',
+      user: 'root',
+      password: '123456',
+      database: 'shulive_task',
     },
     prd: {
       host: 'localhost',
       port: '3306',
-      user: '<user>',
-      password: '<password>',
-      database: '<database>',
+      user: 'root',
+      password: '123456',
+      database: 'shulive_task',
     },
   },
 };

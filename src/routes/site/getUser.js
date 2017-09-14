@@ -1,23 +1,21 @@
-const client = require('./../../models/client');
+const client = require('./../../db/client');
 
 module.exports = async (ctx) => {
   let where;
-  if (ctx.params.uid) {
-    // where = `user_local.id = CAST(${ctx.params.uid} AS UNSIGNED INTEGER)`;
-    where = `user_local.id = ${ctx.params.uid}`;
-  } else if (ctx.params.urlName) {
-    where = `user.username = ${ctx.params.urlName}`;
+  if ((/^[0-9]{20}$/).test(ctx.params.uid)) {
+    where = { 'user_local.id': ctx.params.uid };
+  } else if ((/^[0-9a-zA-Z-]+$/).test(ctx.params.urlName)) {
+    where = { 'user.url_name': ctx.params.urlName };
   }
-  // client.raw(where)
+
   if (where) {
     const userData = await client.select().from('user_local')
-      .where(where) // { 'user_local.id': `CAST(${ctx.params.uid} AS UNSIGNED INTEGER)` }
+      .where(where)
       .leftJoin('shulive.user', 'shulive.user.id', 'user_local.id');
-    if (userData) {
-      console.log(userData);
+    if (userData && userData[0]) {
       await ctx.render('site/user', {
-        title: '',
-        userData: userData[0] || {},
+        title: userData[0].name,
+        userData: userData[0],
       });
     } else {
       ctx.redirect('/');
