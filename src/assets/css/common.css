@@ -1,0 +1,162 @@
+/* Reset
+ * ==========================================================================
+ */
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+/* Layout
+ * ==========================================================================
+ */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+/* Color
+ * ==========================================================================
+ */
+.color-white {
+  color: white;
+}
+
+/* ======================================================================= */
+/* ======================================================================= */
+
+/* Dropdown
+ * ==========================================================================
+ */
+.sl-dropdown {
+  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+.sl-dropdown-btn.sl-dropdown-active {
+  background-color: #cccccc !important;
+}
+.sl-dropdown-menu {
+  background-color: #cccccc !important;
+  position: absolute;
+  display: none;
+}
+.sl-dropdown-link {
+  height: 48px;
+  padding: 0 16px;
+  line-height: 48px;
+  color: #333333;
+  display: block;
+}
+.sl-dropdown-link:hover {
+  background-color: #dddddd;
+}
+.sl-dropdown-left {
+  left: 0;
+}
+.sl-dropdown-right {
+  right: 0;
+}
+
+/* ======================================================================= */
+/* ======================================================================= */
+
+/* Header
+ * ==========================================================================
+ */
+.header {
+  height: 48px;
+  line-height: 100%;
+  background-color: #f5f5f5;
+}
+.header-link {
+  height: 100%;
+  padding: 0 16px;
+  color: #333333;
+  float: left;
+}
+.header-link:hover {
+  background-color: #eeeeee;
+}
+.header-link.active {
+  background-color: #dddddd;
+}
+.header-link span,
+.header-link i {
+  margin: 16px 0;
+  font-size: 16px;
+  line-height: 16px;
+  display: inline-block;
+}
+.header-logo {
+  height: 100%;
+  float: left;
+}
+.header-logo .header-link {
+  background-color: #f1f1f1;
+}
+.header-logo .header-link i {
+  width: 16px;
+}
+.header-menu {
+  height: 100%;
+  float: left;
+}
+.header-menu .header-link span,
+.header-menu .header-link i {
+  font-size: 14px;
+}
+.header-user-box {
+  height: 100%;
+  float: right;
+}
+.header-user-box .header-link span,
+.header-user-box .header-link i {
+  font-size: 14px;
+}
+.header-locale-link {
+  background-color: #f1f1f1;
+}
+.header-locale-link > i {
+  width: 16px;
+  font-size: 16px !important;
+}
+
+/* Content
+ * ==========================================================================
+ */
+.content {
+  min-height: 300px;
+  padding: 16px;
+}
+
+/* Footer
+ * ==========================================================================
+ */
+.footer {
+  height: 48px;
+  padding: 0 16px;
+  line-height: 48px;
+  font-size: 14px;
+  color: #333333;
+}
+.footer-copyright {
+  margin-right: 16px;
+  float: left;
+}
+.footer-locale-link {
+  font-size: 14px;
+  color: #333333;
+  float: left;
+}
+.footer-locale-link i {
+  width: 16px;
+  margin-right: 4px;
+  font-size: 16px;
+  display: inline-block;
+}
