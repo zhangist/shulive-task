@@ -39,10 +39,12 @@ a {
   display: inline-block;
 }
 .sl-dropdown-btn.sl-dropdown-active {
-  background-color: #cccccc !important;
+  color: #ffffff;
+  background-color: #666666 !important;
 }
 .sl-dropdown-menu {
-  background-color: #cccccc !important;
+  white-space: nowrap;
+  background-color: #666666 !important;
   position: absolute;
   display: none;
 }
@@ -50,11 +52,11 @@ a {
   height: 48px;
   padding: 0 16px;
   line-height: 48px;
-  color: #333333;
+  color: #ffffff;
   display: block;
 }
 .sl-dropdown-link:hover {
-  background-color: #dddddd;
+  background-color: #777777;
 }
 .sl-dropdown-left {
   left: 0;

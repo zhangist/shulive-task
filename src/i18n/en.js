@@ -7,6 +7,7 @@
 	"join": "Sign up",
 	"login": "Sign in",
 	"logout": "Sign out",
+	"not-found": "Not found",
 	"password": "Password",
 	"profile": "Profile",
 	"submit": "Submit",

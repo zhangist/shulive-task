@@ -7,6 +7,7 @@
 	"join": "注册",
   "login": "登录",
 	"logout": "退出",
+	"not-found": "未找到",
   "password": "密码",
 	"profile": "个人资料",
   "submit": "提交",
