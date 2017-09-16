@@ -1,17 +1,13 @@
-const dbConfig = require('./../config/db');
-
 const isDev = process.env.NODE_ENV ? !(process.env.NODE_ENV === 'production') : true;
-const env = isDev ? 'dev' : 'prd';
-const mysqlConfig = dbConfig.mysql[env] || dbConfig.mysql.dev;
 
 const client = require('knex')({
   client: 'mysql2',
   debug: isDev,
   connection: {
-    host: mysqlConfig.host,
-    user: process.env.DB_USER || mysqlConfig.user,
-    password: process.env.DB_PWD || mysqlConfig.password,
-    database: mysqlConfig.database,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB_NAME,
     supportBigNumbers: true,
     bigNumberStrings: true,
   },
