@@ -1,5 +1,5 @@
 /node_modules
 /dist
 /rev
-/bin/db-prd
-/bin/db-dev
+/config/db.dev.js
+/config/db.prd.js
