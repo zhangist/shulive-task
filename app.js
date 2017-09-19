@@ -41,13 +41,15 @@ app.use(i18n(app, {
   directory: path.join(__dirname, '/src/i18n'),
   locales: ['zh-cn', 'en'], // `zh-CN` defualtLocale
   modes: [
-    'cookie', //  optional detect cookie      - `Cookie: locale=zh-TW`
+    'cookie', // optional detect cookie - `Cookie: locale=zh-CN`
     'header', // optional detect header - `Accept-Language: zh-CN,zh;q=0.5`
   ],
 }));
 
 // error handler
-onerror(app);
+if (isDev) {
+  onerror(app);
+}
 
 // middlewares
 // cache
@@ -98,12 +100,14 @@ app.use(async (ctx, next) => {
 });
 
 // logger
-app.use(async (ctx, next) => {
-  const start = new Date();
-  await next();
-  const ms = new Date() - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
-});
+if (isDev) {
+  app.use(async (ctx, next) => {
+    const start = new Date();
+    await next();
+    const ms = new Date() - start;
+    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+  });
+}
 
 // routes
 app.use(site.routes(), site.allowedMethods());
