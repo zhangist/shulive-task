@@ -18,12 +18,12 @@ module.exports = async (ctx) => {
         userData: userData[0],
       });
     } else {
-      await ctx.render('site/404', {
+      await ctx.render('404', {
         title: ctx.state.__('not-found'),
       });
     }
   } else {
-    await ctx.render('site/404', {
+    await ctx.render('404', {
       title: ctx.state.__('not-found'),
     });
   }
