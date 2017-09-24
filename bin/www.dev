@@ -6,7 +6,7 @@ const path = require('path');
 
 const dbConfig = fs.existsSync(path.join(__dirname, './../config/db.dev.js'))
   ? require('./../config/db.dev')
-  : require('./../config/db.of-dev-prd');
+  : require('./../config/db.dev-or-prd');
 
 process.env.DB_HOST = dbConfig.mysql.host;
 process.env.DB_PORT = dbConfig.mysql.port;

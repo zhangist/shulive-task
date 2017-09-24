@@ -15,10 +15,6 @@
     "url": "git+https://github.com/zhangist/shulive-task.git"
   },
   "author": "zhangist",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhangist/shulive-task/issues"
-  },
   "homepage": "https://github.com/zhangist/shulive-task#readme",
   "dependencies": {
     "debug": "^2.6.3",

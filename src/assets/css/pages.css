@@ -11,14 +11,15 @@
 .login-page .login-content {
   width: 100%;
   max-width: 300px;
-  border: 1px solid #f5f5f5;
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
 }
 .login-page .login-title {
   height: 48px;
   padding: 0 16px;
   line-height: 48px;
   color: #333333;
-  background-color: #f5f5f5;
+  background-color: #eeeeee;
 }
 .login-page .login-row {
   margin: 16px;
@@ -26,24 +27,34 @@
 .login-page .login-input {
   width: 100%;
   height: 32px;
-  padding: 0 8px;
-  font-size: 14px;
-  line-height: 32px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: normal;
+  border: 1px solid #999999;
+  border-radius: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-appearance: none;
+}
+.login-page .login-input:focus {
+  border: 1px solid #38f;
 }
 .login-page .login-submit {
   height: 32px;
   padding: 0 8px;
   font-size: 16px;
   color: #333333;
-  border: 2px solid #eeeeee;
-  background-color: #eeeeee;
+  border: 2px solid #dddddd;
+  background-color: #dddddd;
+  border-radius: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   cursor: pointer;
 }
 .login-page .login-submit:hover {
-  border: 2px solid #dddddd;
+  border: 2px solid #cccccc;
 }
 .login-page .login-hint.success {
   color: green;
