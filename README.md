@@ -1,7 +1,7 @@
 # Shulive Task
 A superset of similar GitHub for all the people.
 
-### Get started
+### Getting started
 - require node7.6+
 - `npm install` install packages
 - `npm run dev` start app for development with nodemon
