@@ -7,7 +7,6 @@ const getLogout = require('./getLogout');
 const getProfile = require('./getProfile');
 const postLogin = require('./postLogin');
 
-/* eslint-disable no-underscore-dangle */
 router.get('/', getIndex);
 router.get('/:uid([0-9]{20})', getUser);
 router.get('/@:urlName', getUser);

@@ -1,4 +1,4 @@
-const client = require('./../../db/client');
+const knex = require('./../../db/knexClient');
 
 module.exports = async (ctx) => {
   let where;
@@ -9,7 +9,7 @@ module.exports = async (ctx) => {
   }
 
   if (where) {
-    const userData = await client.select().from('user_local')
+    const userData = await knex('user_local').select()
       .where(where)
       .rightJoin('shulive.user', 'shulive.user.id', 'user_local.id');
     if (userData && userData[0]) {

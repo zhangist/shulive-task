@@ -1,4 +1,4 @@
-// const client = require('./../../db/client');
+// const knex = require('./../../db/knexClient');
 
 module.exports = async (ctx) => {
   await ctx.render('site/index', {
