@@ -14,4 +14,6 @@ process.env.DB_USER = dbConfig.mysql.user;
 process.env.DB_PWD = dbConfig.mysql.password;
 process.env.DB_NAME = dbConfig.mysql.database;
 
+process.env.STATIC_HOST = appConfig.staticHost;
+
 require('./www');

@@ -90,6 +90,7 @@ app.use(session({
 
 // state
 app.use(async (ctx, next) => {
+  ctx.state.staticHost = process.env.STATIC_HOST;
   if (ctx.session && ctx.session.user) {
     ctx.state.user = ctx.session.user;
   }

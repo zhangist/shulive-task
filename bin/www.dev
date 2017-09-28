@@ -4,14 +4,16 @@ process.env.NODE_ENV = 'development';
 const fs = require('fs');
 const path = require('path');
 
-const dbConfig = fs.existsSync(path.join(__dirname, './../config/db.dev.js'))
-  ? require('./../config/db.dev')
-  : require('./../config/db.dev-or-prd');
+const appConfig = fs.existsSync(path.join(__dirname, './../config/app.dev.js'))
+  ? require('./../config/app.dev')
+  : require('./../config/app.dev-or-prd');
 
-process.env.DB_HOST = dbConfig.mysql.host;
-process.env.DB_PORT = dbConfig.mysql.port;
-process.env.DB_USER = dbConfig.mysql.user;
-process.env.DB_PWD = dbConfig.mysql.password;
-process.env.DB_NAME = dbConfig.mysql.database;
+process.env.DB_HOST = appConfig.mysql.host;
+process.env.DB_PORT = appConfig.mysql.port;
+process.env.DB_USER = appConfig.mysql.user;
+process.env.DB_PWD = appConfig.mysql.password;
+process.env.DB_NAME = appConfig.mysql.database;
+
+process.env.STATIC_HOST = appConfig.staticHost;
 
 require('./www');
