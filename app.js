@@ -19,15 +19,13 @@ const site = require('./src/routes/site');
 const user = require('./src/routes/user');
 
 const isDev = process.env.NODE_ENV ? !(process.env.NODE_ENV === 'production') : true;
-const env = isDev ? 'development' : 'production';
 const staticPath = isDev ? '/src/assets' : '/dist/assets';
 const viewsPath = isDev ? '/src/views' : '/dist/views';
 
 console.log(`
-NODE_ENV:   ${process.env.NODE_ENV}
-   isDev:   ${isDev}
-     ENV:   ${env}
-    Host:   localhost:3009
+APP_NAME    ${process.env.APP_NAME}
+NODE_ENV    ${process.env.NODE_ENV}
+PORT        ${process.env.PORT}
 `);
 
 const app = new Koa();
@@ -90,10 +88,10 @@ app.use(session({
 
 // state
 app.use(async (ctx, next) => {
-  ctx.state.staticHost = process.env.STATIC_HOST;
   if (ctx.session && ctx.session.user) {
     ctx.state.user = ctx.session.user;
   }
+  ctx.state.staticHost = process.env.STATIC_HOST;
   // filter the last '/' in url to determine link's active
   ctx.state.urlPath = ctx.url.replace(/(.+)(\/)$/, '$1');
   ctx.i18n.setLocaleFromSessionVar(ctx);

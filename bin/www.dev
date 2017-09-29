@@ -1,19 +1,5 @@
 // set node env
 process.env.NODE_ENV = 'development';
 
-const fs = require('fs');
-const path = require('path');
-
-const appConfig = fs.existsSync(path.join(__dirname, './../config/app.dev.js'))
-  ? require('./../config/app.dev')
-  : require('./../config/app.dev-or-prd');
-
-process.env.DB_HOST = appConfig.mysql.host;
-process.env.DB_PORT = appConfig.mysql.port;
-process.env.DB_USER = appConfig.mysql.user;
-process.env.DB_PWD = appConfig.mysql.password;
-process.env.DB_NAME = appConfig.mysql.database;
-
-process.env.STATIC_HOST = appConfig.staticHost;
-
+require('./../config/app.dev');
 require('./www');
