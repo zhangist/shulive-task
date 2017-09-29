@@ -3,3 +3,5 @@
 /rev
 /config/db.dev.js
 /config/db.prd.js
+/config/app.dev.js
+/config/app.prd.js
