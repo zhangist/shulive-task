@@ -4,9 +4,9 @@ process.env.NODE_ENV = 'production';
 const fs = require('fs');
 const path = require('path');
 
-const dbConfig = fs.existsSync(path.join(__dirname, './../config/db.prd.js'))
-  ? require('./../config/db.prd')
-  : require('./../config/db.dev-or-prd');
+const dbConfig = fs.existsSync(path.join(__dirname, './../config/app.prd.js'))
+  ? require('./../config/app.prd')
+  : require('./../config/app.dev-or-prd');
 
 process.env.DB_HOST = dbConfig.mysql.host;
 process.env.DB_PORT = dbConfig.mysql.port;
